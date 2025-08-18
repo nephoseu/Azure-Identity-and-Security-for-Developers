@@ -73,9 +73,9 @@ In this task, you will create and configure user accounts. User accounts will st
     | Department  | `IT` |
     | Usage location (Properties tab) | **United States** |
     
-    ![Invite external user Properties tab](../Media/invite_external_user_2.png)
 
 1. Select **Review + invite**, and then **Invite**.
+    ![Invite external user Properties tab](../Media/invite_external_user_2.png)
 
 1. **Refresh** the page and confirm the invited user was created. You should receive the invitation email shortly. 
 ![All users](../Media/users.png)
@@ -134,6 +134,7 @@ In this task, you will create and configure management groups. Management groups
 1. Search for and select `Management groups`.
 
 1. On the **Management groups** blade, click **+ Create**. Or click **Start using management groups**
+![Create management groups](../Media/create_management_group.png) 
 
 1. Create a management group with the following settings. Select **Submit** when you are done. 
 
