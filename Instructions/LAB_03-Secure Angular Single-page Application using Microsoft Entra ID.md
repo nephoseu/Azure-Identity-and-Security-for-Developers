@@ -35,15 +35,12 @@ lab:
     ```
     - Supported account types: Accounts in this organizational directory only
 
-    - In the Redirect URI (optional) section, select Web in the combo-box and enter the following redirect URI:
-    ```
-    http://localhost:4200/
-    ```
+    - In the Redirect URI (optional) section, select SPA in the combo-box.
     ![Register the Application in Microsoft Entra ID](../Media/register_angular_app_in_entra_id.png) 
  1. Click Register.
 
 1. On the app's registration page, find and copy the *Application (client) ID* and *Directory (tenant) ID* values to use later. You'll use those values in your app's configuration file or files.
-![Application registration page](../Media/app_registration_page.png) 
+![Application registration page](../Media/angular_app_registration_page.png) 
 
 ## Task 2: Create a new Angular project
 
@@ -73,7 +70,8 @@ lab:
     ng generate component home
     ng generate component profile
     ```
-1. Remove unnecessary files and code from the project:
+1. Remove unnecessary files and code from the project
+    If you are Windows user and using ***Command prompt*** or ***Power Shell*** use these commands:
     ```
     del src\app\app.component.css
     del src\app\app.component.spec.ts
@@ -81,6 +79,15 @@ lab:
     del src\app\home\home.component.spec.ts
     del src\app\profile\profile.component.css
     del src\app\profile\profile.component.spec.ts
+    ```
+    If you are Mac user and using ***Terminal*** or ***Bash*** use these commands:
+    ```
+    rm src\app\app.component.css
+    rm src\app\app.component.spec.ts
+    rm src\app\home\home.component.css
+    rm src\app\home\home.component.spec.ts
+    rm src\app\profile\profile.component.css
+    rm src\app\profile\profile.component.spec.ts
     ```
 1. Rename **app.routes.ts** to **app-routing.module.ts** and update all references of app.routes.ts throughout the application.
 1. Rename **app.config.ts** to **app.module.ts** using Visual Studio Code and update all references to app.config.ts throughout the application.
@@ -191,7 +198,8 @@ lab:
 
     @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    templateUrl: './app.component.html',
+    standalone:false
     })
     export class AppComponent implements OnInit, OnDestroy {
     title = 'Angular 12 - MSAL Example';
@@ -304,7 +312,8 @@ lab:
 
     @Component({
     selector: 'app-home',
-    templateUrl: './home.component.html'
+    templateUrl: './home.component.html',
+    standalone:false
     })
     export class HomeComponent implements OnInit {
     constructor(
@@ -422,7 +431,8 @@ lab:
 
     @Component({
     selector: 'app-profile',
-    templateUrl: './profile.component.html'
+    templateUrl: './profile.component.html',
+    standalone:false
     })
     export class ProfileComponent implements OnInit {
     profile!: ProfileType;
